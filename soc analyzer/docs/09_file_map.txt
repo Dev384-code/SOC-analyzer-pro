@@ -1,0 +1,45 @@
+SENTRYLINE FILE-BY-FILE MAP
+
+Root files
+----------
+app.py - Flask app, routes, upload workflow, persistence, auth, template context.
+config.py - Paths, upload limits, brute-force threshold, IP reputation.
+requirements.txt - Flask and pytest dependencies.
+README.md - Public project documentation, architecture, logic, evaluation, limits, and career context.
+
+Analyzer package
+----------------
+analyzer/__init__.py - Marks analyzer as a Python package.
+analyzer/parser.py - Converts supported text lines into normalized events.
+analyzer/detector.py - Runs detection rules, ATT&CK tagging, risk scoring, and correlation.
+analyzer/alerts.py - Converts findings to alert records.
+analyzer/metrics.py - Computes aggregate and per-type evaluation metrics.
+analyzer/utils.py - Display formatting helpers.
+
+Data and logs
+-------------
+data/results.json - Latest persisted output displayed by the app.
+logs/uploads/ - Accepted uploaded files. The application creates this directory when needed.
+
+User interface
+--------------
+templates/index.html - Main upload-first dashboard.
+templates/dashboard.html - Dashboard route extension.
+templates/report.html - Full incident report and metrics.
+static/style.css - Main visual styling.
+static/upload.css - Upload panel and capability styling.
+static/report.css - Metrics panel styling.
+static/chart.js - Reserved frontend chart hook.
+
+Testing and CI
+--------------
+tests/evaluation_logs.txt - 52-line benchmark input.
+tests/ground_truth.csv - Expected line/type labels.
+tests/test_parser.py - Parser tests.
+tests/test_detector.py - Detector and metrics tests.
+tests/test_app.py - Flask upload and auth tests.
+.github/workflows/tests.yml - GitHub Actions test workflow.
+
+docs/
+-----
+The other text files in this folder expand each area for project review and professor presentation.

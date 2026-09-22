@@ -1,0 +1,130 @@
+2026-09-01 00:11:00 sshd[1000]: Accepted password for dbarot from 10.0.0.15 port 54299 ssh2
+2026-09-01 00:16:00 sshd[1001]: Accepted password for jsmith from 10.0.0.22 port 34572 ssh2
+2026-09-01 00:28:00 sshd[1002]: Accepted password for dbarot from 10.0.0.15 port 49349 ssh2
+2026-09-01 00:35:00 sshd[1003]: Accepted password for dbarot from 10.0.0.15 port 33070 ssh2
+2026-09-01 00:39:00 sshd[1004]: Accepted password for dbarot from 10.0.0.22 port 48390 ssh2
+2026-09-01 00:43:00 sshd[1005]: Accepted password for jsmith from 192.168.1.45 port 44719 ssh2
+2026-09-01 00:53:00 sshd[1006]: Accepted password for dbarot from 10.0.0.31 port 54864 ssh2
+2026-09-01 01:06:00 sshd[1007]: Accepted password for svc_backup from 10.0.0.22 port 41149 ssh2
+2026-09-01 01:11:00 sshd[1008]: Accepted password for jsmith from 10.0.0.22 port 55018 ssh2
+2026-09-01 01:17:00 sshd[1009]: Accepted password for dbarot from 10.0.0.15 port 42449 ssh2
+2026-09-01 01:19:00 sshd[1010]: Accepted password for admin_ops from 10.0.0.31 port 49782 ssh2
+2026-09-01 01:24:00 sshd[1011]: Accepted password for svc_backup from 10.0.0.15 port 47571 ssh2
+2026-09-01 01:26:00 sshd[1012]: Accepted password for dbarot from 192.168.1.45 port 48089 ssh2
+2026-09-01 01:31:00 sshd[1013]: Accepted password for jsmith from 10.0.0.31 port 53087 ssh2
+2026-09-01 01:33:00 sshd[1014]: Accepted password for jsmith from 10.0.0.15 port 55331 ssh2
+2026-09-01 01:38:00 sshd[1015]: Accepted password for jsmith from 10.0.0.15 port 58392 ssh2
+2026-09-01 01:40:00 sshd[1016]: Accepted password for admin_ops from 192.168.1.45 port 44857 ssh2
+2026-09-01 01:51:00 sshd[1017]: Accepted password for jsmith from 10.0.0.31 port 42130 ssh2
+2026-09-01 01:57:00 sshd[1018]: Accepted password for admin_ops from 10.0.0.22 port 52997 ssh2
+2026-09-01 02:12:00 sshd[1019]: Accepted password for jsmith from 10.0.0.15 port 47502 ssh2
+2026-09-01 02:24:00 sshd[1020]: Accepted password for jsmith from 10.0.0.22 port 45147 ssh2
+2026-09-01 02:31:00 sshd[1021]: Accepted password for jsmith from 10.0.0.31 port 52433 ssh2
+2026-09-01 02:37:00 sshd[1022]: Accepted password for jsmith from 10.0.0.15 port 56928 ssh2
+2026-09-01 02:38:00 sshd[1023]: Accepted password for svc_backup from 10.0.0.31 port 38773 ssh2
+2026-09-01 02:40:00 sshd[1024]: Accepted password for admin_ops from 10.0.0.22 port 36967 ssh2
+2026-09-01 02:45:04 sshd[2000]: Failed password for oracle from 185.220.101.45 port 58989 ssh2
+2026-09-01 02:45:08 sshd[2001]: Failed password for admin from 185.220.101.45 port 38679 ssh2
+2026-09-01 02:45:10 sshd[2002]: Failed password for admin from 185.220.101.45 port 54411 ssh2
+2026-09-01 02:45:13 sshd[2003]: Failed password for ubuntu from 185.220.101.45 port 49155 ssh2
+2026-09-01 02:45:17 sshd[2004]: Failed password for postgres from 185.220.101.45 port 43087 ssh2
+2026-09-01 02:45:20 sshd[2005]: Failed password for admin from 185.220.101.45 port 34532 ssh2
+2026-09-01 02:45:24 sshd[2006]: Failed password for root from 185.220.101.45 port 54765 ssh2
+2026-09-01 02:45:25 sshd[2007]: Failed password for root from 185.220.101.45 port 35008 ssh2
+2026-09-01 02:45:27 sshd[2008]: Failed password for ubuntu from 185.220.101.45 port 43833 ssh2
+2026-09-01 02:45:28 sshd[2009]: Failed password for oracle from 185.220.101.45 port 42504 ssh2
+2026-09-01 02:45:32 sshd[2010]: Failed password for postgres from 185.220.101.45 port 38238 ssh2
+2026-09-01 02:45:33 sshd[2011]: Failed password for ubuntu from 185.220.101.45 port 53616 ssh2
+2026-09-01 02:45:34 sshd[2012]: Failed password for ubuntu from 185.220.101.45 port 58992 ssh2
+2026-09-01 02:45:37 sshd[2013]: Failed password for ubuntu from 185.220.101.45 port 41146 ssh2
+2026-09-01 02:45:38 sshd[2014]: Failed password for test from 185.220.101.45 port 44246 ssh2
+2026-09-01 02:45:40 sshd[2015]: Failed password for oracle from 185.220.101.45 port 30106 ssh2
+2026-09-01 02:45:43 sshd[2016]: Failed password for postgres from 185.220.101.45 port 54967 ssh2
+2026-09-01 02:45:45 sshd[2017]: Failed password for postgres from 185.220.101.45 port 59904 ssh2
+2026-09-01 02:45:46 sshd[2018]: Failed password for ubuntu from 185.220.101.45 port 39779 ssh2
+2026-09-01 02:45:48 sshd[2019]: Failed password for admin from 185.220.101.45 port 42252 ssh2
+2026-09-01 02:45:50 sshd[2020]: Failed password for postgres from 185.220.101.45 port 55514 ssh2
+2026-09-01 02:45:51 sshd[2021]: Failed password for postgres from 185.220.101.45 port 40621 ssh2
+2026-09-01 02:45:55 sshd[2022]: Failed password for root from 185.220.101.45 port 33665 ssh2
+2026-09-01 02:45:58 sshd[2023]: Failed password for test from 185.220.101.45 port 37846 ssh2
+2026-09-01 02:45:59 sshd[2024]: Failed password for admin from 185.220.101.45 port 58770 ssh2
+2026-09-01 02:46:00 sshd[2025]: Failed password for root from 185.220.101.45 port 53983 ssh2
+2026-09-01 02:46:04 sshd[2026]: Failed password for root from 185.220.101.45 port 54923 ssh2
+2026-09-01 02:46:06 sshd[2027]: Failed password for admin from 185.220.101.45 port 51618 ssh2
+2026-09-01 02:46:10 sshd[2028]: Failed password for postgres from 185.220.101.45 port 35410 ssh2
+2026-09-01 02:46:13 sshd[2029]: Failed password for postgres from 185.220.101.45 port 58587 ssh2
+2026-09-01 02:46:17 sshd[2030]: Failed password for admin from 185.220.101.45 port 47671 ssh2
+2026-09-01 02:46:19 sshd[2031]: Failed password for ubuntu from 185.220.101.45 port 40214 ssh2
+2026-09-01 02:46:23 sshd[2032]: Failed password for ubuntu from 185.220.101.45 port 51295 ssh2
+2026-09-01 02:46:26 sshd[2033]: Failed password for oracle from 185.220.101.45 port 59478 ssh2
+2026-09-01 02:46:30 sshd[2034]: Failed password for root from 185.220.101.45 port 38123 ssh2
+2026-09-01 02:46:32 sshd[2035]: Failed password for root from 185.220.101.45 port 41078 ssh2
+2026-09-01 02:46:33 sshd[2036]: Failed password for postgres from 185.220.101.45 port 48150 ssh2
+2026-09-01 02:46:35 sshd[2037]: Failed password for postgres from 185.220.101.45 port 37216 ssh2
+2026-09-01 02:46:36 sshd[2038]: Failed password for root from 185.220.101.45 port 53194 ssh2
+2026-09-01 02:46:37 sshd[2039]: Failed password for admin from 185.220.101.45 port 32208 ssh2
+2026-09-01 02:46:40 sshd[2041]: Accepted password for root from 185.220.101.45 port 51422 ssh2
+2026-09-01 02:46:42 sshd[2041]: pam_unix(sshd:session): session opened for user root by (uid=0)
+2026-09-01 02:46:52 sudo: root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/useradd -m -s /bin/bash svc_update
+2026-09-01 02:46:56 sudo: root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/sbin/usermod -aG sudo svc_update
+2026-09-01 02:47:02 auth: new user svc_update added to group sudo by root from 185.220.101.45
+2026-09-01 02:47:04 203.0.113.77 - - [01/Sep/2026:02:47:04] "GET /wp-admin/admin-ajax.php HTTP/1.1" 500 222 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:47:21 203.0.113.77 - - [01/Sep/2026:02:47:21] "GET /product.php?id=1;DROP TABLE users;-- HTTP/1.1" 500 835 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:47:37 203.0.113.77 - - [01/Sep/2026:02:47:37] "GET /product.php?id=1;DROP TABLE users;-- HTTP/1.1" 404 890 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:47:56 203.0.113.77 - - [01/Sep/2026:02:47:56] "GET /admin/config.php?cmd=cat%20/etc/shadow HTTP/1.1" 200 398 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:48:12 203.0.113.77 - - [01/Sep/2026:02:48:12] "GET /wp-admin/admin-ajax.php HTTP/1.1" 200 344 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:48:16 203.0.113.77 - - [01/Sep/2026:02:48:16] "GET /login.php?user=admin' OR '1'='1 HTTP/1.1" 200 512 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:48:30 203.0.113.77 - - [01/Sep/2026:02:48:30] "GET /search.php?q=<script>alert(document.cookie)</script> HTTP/1.1" 200 896 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:48:32 203.0.113.77 - - [01/Sep/2026:02:48:32] "GET /wp-login.php HTTP/1.1" 403 212 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:48:45 203.0.113.77 - - [01/Sep/2026:02:48:45] "GET /wp-login.php HTTP/1.1" 500 261 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:48:53 203.0.113.77 - - [01/Sep/2026:02:48:53] "GET /product.php?id=1;DROP TABLE users;-- HTTP/1.1" 404 699 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:49:08 203.0.113.77 - - [01/Sep/2026:02:49:08] "GET /product.php?id=1;DROP TABLE users;-- HTTP/1.1" 200 337 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:49:17 203.0.113.77 - - [01/Sep/2026:02:49:17] "GET /search.php?q=<script>alert(document.cookie)</script> HTTP/1.1" 404 227 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:49:32 203.0.113.77 - - [01/Sep/2026:02:49:32] "GET /wp-admin/admin-ajax.php HTTP/1.1" 403 201 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:49:50 203.0.113.77 - - [01/Sep/2026:02:49:50] "GET /wp-admin/admin-ajax.php HTTP/1.1" 403 245 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:49:58 203.0.113.77 - - [01/Sep/2026:02:49:58] "GET /product.php?id=1;DROP TABLE users;-- HTTP/1.1" 200 647 "-" "sqlmap/1.7.2#stable"
+2026-09-01 02:51:58 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=13202 DPT=7906 SYN
+2026-09-01 02:51:58 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=40020 DPT=3522 SYN
+2026-09-01 02:51:58 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=45274 DPT=6590 SYN
+2026-09-01 02:51:58 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=16438 DPT=980 SYN
+2026-09-01 02:51:58 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=8880 DPT=2717 SYN
+2026-09-01 02:51:59 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=59369 DPT=6229 SYN
+2026-09-01 02:51:59 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=17159 DPT=55 SYN
+2026-09-01 02:51:59 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=39986 DPT=6416 SYN
+2026-09-01 02:51:59 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=41615 DPT=4365 SYN
+2026-09-01 02:51:59 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=28498 DPT=7474 SYN
+2026-09-01 02:51:59 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=39275 DPT=4693 SYN
+2026-09-01 02:52:00 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=35285 DPT=6950 SYN
+2026-09-01 02:52:00 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=62280 DPT=7993 SYN
+2026-09-01 02:52:00 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=14410 DPT=2556 SYN
+2026-09-01 02:52:00 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=47960 DPT=3131 SYN
+2026-09-01 02:52:00 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=16666 DPT=4881 SYN
+2026-09-01 02:52:00 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=26962 DPT=3586 SYN
+2026-09-01 02:52:00 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=45043 DPT=978 SYN
+2026-09-01 02:52:01 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=20684 DPT=8903 SYN
+2026-09-01 02:52:01 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=21744 DPT=1018 SYN
+2026-09-01 02:52:01 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=50298 DPT=5158 SYN
+2026-09-01 02:52:01 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=5778 DPT=956 SYN
+2026-09-01 02:52:01 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=31058 DPT=841 SYN
+2026-09-01 02:52:02 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=37920 DPT=7831 SYN
+2026-09-01 02:52:02 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=5825 DPT=8258 SYN
+2026-09-01 02:52:02 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=14993 DPT=8721 SYN
+2026-09-01 02:52:02 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=18404 DPT=2599 SYN
+2026-09-01 02:52:02 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=62186 DPT=951 SYN
+2026-09-01 02:52:02 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=58752 DPT=8340 SYN
+2026-09-01 02:52:02 kernel: [UFW BLOCK] IN=eth0 OUT= SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SPT=58647 DPT=1332 SYN
+2026-09-01 02:13:00 netflow: SRC=10.0.0.15 DST=91.219.236.18 PROTO=TCP SPT=51900 DPT=443 BYTES_OUT=482193044 DURATION=612s
+2026-09-01 02:13:30 dlp_agent: large outbound transfer detected from host WKS-15 (dbarot) to external IP 91.219.236.18, 460MB over HTTPS, flagged for review
+2026-09-01 03:05:00 edr_agent: process created: powershell.exe -nop -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQA... parent=winword.exe user=jsmith host=WKS-22
+2026-09-01 03:05:02 edr_agent: outbound connection from powershell.exe to 185.220.101.45:8080 host=WKS-22
+2026-09-01 03:05:03 edr_agent: ALERT - suspicious LOLBin execution chain detected (winword.exe -> powershell.exe -> network connection) host=WKS-22 severity=HIGH
+2026-09-01 06:12:00 sshd[5000]: Accepted publickey for admin_ops from 10.0.0.31 port 35169 ssh2
+2026-09-01 06:31:00 sshd[5001]: Accepted publickey for dbarot from 10.0.0.31 port 51884 ssh2
+2026-09-01 06:45:00 sshd[5002]: Accepted publickey for jsmith from 10.0.0.15 port 38666 ssh2
+2026-09-01 06:53:00 sshd[5003]: Accepted publickey for jsmith from 10.0.0.15 port 38924 ssh2
+2026-09-01 07:07:00 sshd[5004]: Accepted publickey for admin_ops from 10.0.0.22 port 36671 ssh2
+2026-09-01 07:20:00 sshd[5005]: Accepted publickey for admin_ops from 192.168.1.45 port 59666 ssh2
+2026-09-01 07:26:00 sshd[5006]: Accepted publickey for svc_backup from 10.0.0.15 port 57176 ssh2
+2026-09-01 07:39:00 sshd[5007]: Accepted publickey for dbarot from 10.0.0.15 port 40929 ssh2
+2026-09-01 07:48:00 sshd[5008]: Accepted publickey for jsmith from 10.0.0.31 port 54288 ssh2
+2026-09-01 08:07:00 sshd[5009]: Accepted publickey for dbarot from 192.168.1.45 port 33665 ssh2

@@ -1,0 +1,46 @@
+analyzer/detector.py - DETECTION ENGINE
+
+Role
+----
+Applies security rules to normalized events and returns findings. The detector is independent of Flask and can be tested directly.
+
+Detection rules
+----------------
+Brute force
+    Groups failed logins by source IP. Three or more failures inside ten minutes produce a critical T1110 finding. Exactly two failures do not trigger it.
+
+Suspicious IP
+    Matches event.ip against config.SUSPICIOUS_IPS. The alert includes high severity and ATT&CK metadata.
+
+Web attack
+    Scans raw/request content for SQL injection, UNION SELECT, XSS, path traversal, and DROP TABLE indicators. Maps to T1190 Exploit Public-Facing Application.
+
+Behavioral unusual time
+    Collects each user's login hours. A user must have at least three events. The baseline is the median hour and dispersion is median absolute deviation (MAD). A login beyond three MADs, with a minimum two-hour tolerance, is flagged as T1078 Valid Accounts. This avoids a global 9am-6pm assumption.
+
+Privilege escalation
+    Records sudo/usermod/useradd activity normalized as privilege events and maps suspicious alerts to T1548.
+
+LOLBin execution
+    Detects suspicious process/PowerShell records and maps them to T1218.
+
+C2 beaconing
+    Uses beacon, heartbeat, or c2 keywords and maps to T1071.
+
+Data exfiltration
+    Uses transfer, outbound, or bytes_out keywords and maps to T1041.
+
+Network scan
+    Maps firewall/UFW block records to T1046.
+
+ATT&CK metadata
+----------------
+ATTACK_MAP is the single catalog of detection type, technique ID, technique name, and tactic. Every finding is created with _finding(), which attaches confidence, source line, and mitre metadata.
+
+Correlation
+-----------
+_findings are grouped by known user or source IP. Multiple different detection types within 30 minutes receive correlation metadata with an incident ID and related types. Original findings remain available for precise evaluation.
+
+Risk score
+----------
+Critical, high, medium, and low alerts have weights of 30, 20, 10, and 5. Failed login volume adds up to ten points. The score is capped at 100.

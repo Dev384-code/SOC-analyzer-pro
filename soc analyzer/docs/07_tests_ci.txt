@@ -1,0 +1,37 @@
+TESTS AND CONTINUOUS INTEGRATION
+
+requirements.txt
+----------------
+Declares Flask for the application and pytest for automated tests.
+
+tests/test_parser.py
+--------------------
+Checks SSH, Apache, JSON, CSV, and generic firewall parsing. It also verifies malformed examples return None or parse_errors instead of crashing.
+
+tests/test_detector.py
+----------------------
+Checks the exact brute-force boundary: three failures trigger and two failures do not. It checks user baselines, web attack T1190, distinct C2/exfiltration rules, and metric denominator behavior.
+
+tests/test_app.py
+-----------------
+Checks extension rejection and optional HTTP Basic Auth.
+
+tests/evaluation_logs.txt
+--------------------------
+A 52-line labeled benchmark input containing normal events, malicious events, cold-start behavior, borderline brute force, web attacks, privilege activity, C2, exfiltration, scanning, and one malformed line.
+
+tests/ground_truth.csv
+----------------------
+Line-level labels in the form line,type. The metrics system compares these labels to detector findings.
+
+.github/workflows/tests.yml
+---------------------------
+Runs on every push and pull request. It checks out the code, installs requirements, and runs python -m pytest -q on Ubuntu with Python 3.12.
+
+Run locally
+-----------
+python -m pytest -q
+
+Expected current result
+-----------------------
+19 tests pass. The benchmark currently has 14 labeled positive detections across eight detection categories and includes true-negative cases.

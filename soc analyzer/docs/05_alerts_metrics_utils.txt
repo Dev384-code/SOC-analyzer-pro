@@ -1,0 +1,22 @@
+analyzer/alerts.py, metrics.py, utils.py
+
+alerts.py
+---------
+build_alerts() converts detector findings into user-facing alert records. Each alert receives an ID such as ALT-0001, creation time, and open status while retaining message, severity, source line, confidence, correlation, and MITRE metadata.
+
+metrics.py
+----------
+evaluate_findings() compares predicted (line, type) pairs with labeled ground-truth pairs.
+
+True positive: predicted line/type exists in the labels.
+False positive: predicted line/type is not in the labels.
+False negative: labeled line/type was not predicted.
+Precision: true positives divided by all predicted positives.
+Recall: true positives divided by all expected positives.
+False-positive rate: false positives divided by benchmark negative cases, using total_cases - labeled positives.
+
+The result includes aggregate metrics and a by_type dictionary. Per-type values are more informative because a large alert category should not hide a weak smaller rule.
+
+utils.py
+--------
+Contains small display helpers for timestamp formatting and CSS-safe severity names. These helpers are not involved in detection decisions.

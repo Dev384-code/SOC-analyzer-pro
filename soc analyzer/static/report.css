@@ -1,0 +1,37 @@
+.metrics-panel{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:24px;align-items:center;background:var(--ink);color:#fff;padding:22px 28px;margin-bottom:16px}
+.metrics-panel h2{font-size:18px;margin:0}
+.metrics-panel .eyebrow{color:#a4b2a9;margin-bottom:8px}
+.metric{border-left:1px solid #42514a;padding-left:18px}
+.metric span{display:block;color:#a4b2a9;font:10px 'DM Mono',monospace;text-transform:uppercase}
+.metric strong{display:block;color:var(--lime);font-size:27px;margin-top:7px}
+
+.benchmark-details-panel{margin-bottom:16px;background:#fff;border:1px solid var(--line);padding:24px 28px}
+.benchmark-details-panel table{font-size:12px}
+
+.filter-toolbar{display:flex;gap:16px;align-items:center;padding:14px 0 18px;border-bottom:1px solid var(--line);margin-bottom:16px;flex-wrap:wrap}
+.filter-search{flex:1;min-width:260px;padding:9px 13px;border:1px solid var(--line);background:#fff;font:12px Manrope,sans-serif;border-radius:4px}
+.filter-group{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.filter-group label{font:11px 'DM Mono',monospace;text-transform:uppercase}
+.filter-select{padding:8px 10px;border:1px solid var(--line);background:#fff;font:12px Manrope,sans-serif;border-radius:4px;cursor:pointer}
+
+.table-actions{display:flex;align-items:center;gap:12px}
+.button-secondary{background:#fff;color:var(--ink);border:1px solid var(--line);padding:8px 14px;border-radius:4px;font:700 11px 'DM Mono',monospace;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.button-secondary:hover{background:#f0f3eb;border-color:#b9c4b5}
+
+.triage-select{padding:5px 8px;font:11px 'DM Mono',monospace;text-transform:uppercase;border-radius:3px;border:1px solid var(--line);background:#fff;cursor:pointer;transition:all .15s ease}
+.triage-select.status-open{background:#fff8ea;color:#9c681d;border-color:#e4c798}
+.triage-select.status-in_progress{background:#e3ecfb;color:#355c91;border-color:#a8c4f0}
+.triage-select.status-resolved{background:#eaf2de;color:#3d6842;border-color:#b7d4a2}
+.triage-select.status-false_positive{background:#f0f2f0;color:#718078;border-color:#d0d7d3}
+
+.correlation-badge{display:inline-block;background:#eef5e4;color:#2f5337;padding:2px 6px;border-radius:3px;margin-top:4px;font-size:11px;border:1px solid #d4e4c2}
+.filter-stats{font:11px 'DM Mono',monospace;color:var(--muted);margin-left:auto}
+
+@media(max-width:800px){
+  .metrics-panel{grid-template-columns:1fr 1fr}
+  .metrics-panel>div:first-child{grid-column:1/-1}
+  .metric{padding-left:12px}
+  .filter-toolbar{flex-direction:column;align-items:stretch}
+  .filter-search{min-width:auto}
+  .filter-stats{margin-left:0}
+}

@@ -1,0 +1,204 @@
+SENTRYLINE FILE-BY-FILE BREAKDOWN
+
+This file explains what each major file in the project does, in plain English.
+
+============================================================
+ROOT FILES
+============================================================
+
+README.md
+Purpose: Main project documentation.
+What it does: Explains the project goal, workflow, supported log types, detection logic, evaluation approach, setup steps, architecture, and limitations. This is the best overview file for understanding the project.
+
+app.py
+Purpose: Main Flask application entry point.
+What it does: Starts the web app, handles routes, uploads, authentication, parsing, analysis, persistence, dashboard/report rendering, sample log loading, and CSV export. This file connects all parts of the system together.
+
+config.py
+Purpose: Central configuration and tuning file.
+What it does: Defines important settings such as the project root, paths for results and uploads, upload size limits, suspicious IP addresses, brute-force thresholds, and correlation windows. Detection tuning values live here.
+
+requirements.txt
+Purpose: Python dependencies.
+What it does: Lists the libraries the app needs to run, especially Flask and pytest.
+
+.github/workflows/tests.yml
+Purpose: CI pipeline definition.
+What it does: Runs the automated test suite in GitHub Actions whenever code is pushed or a pull request is submitted.
+
+============================================================
+ANALYZER PACKAGE
+============================================================
+
+analyzer/__init__.py
+Purpose: Marks the directory as a Python package.
+What it does: Allows Python imports like "from analyzer.parser import ...".
+
+analyzer/parser.py
+Purpose: Normalizes raw logs into a common event format.
+What it does: Reads supported lines from .log / .txt files and converts them into event dictionaries with fields like timestamp, user, ip, country, action, and status. It supports JSON, CSV, SSH authentication logs, Apache/Nginx access logs, firewall messages, privilege events, and generic security lines. It also does some session-context tracking so SSH session activity inherits the right IP and metadata.
+
+analyzer/detector.py
+Purpose: Detection engine and alert logic.
+What it does: Looks through normalized events and creates findings for suspicious behavior. It detects brute force, suspicious IPs, unusual login times, account takeover, web attacks, privilege escalation, LOLBin execution, C2 activity, exfiltration, and network scanning. It also assigns ATT&CK technique IDs and tactics to each type of finding.
+
+analyzer/alerts.py
+Purpose: Builds analyst-facing alerts from detections.
+What it does: Converts each finding into a standard alert object with fields like id, timestamp, severity, user, IP, message, and triage status. This is the layer between raw detection logic and the reporting UI.
+
+analyzer/metrics.py
+Purpose: Benchmark evaluation and quality metrics.
+What it does: Compares detected findings to ground-truth labels and computes precision, recall, false positive rate, and per-detection-type results. This allows the project to measure how well the rules perform against labeled test data.
+
+analyzer/utils.py
+Purpose: Utility functions.
+What it does: Formats timestamps for human-readable display and normalizes severity values for CSS classes and UI styling.
+
+============================================================
+DATA AND STORAGE
+============================================================
+
+data/results.json
+Purpose: Persisted analysis output.
+What it does: Stores the most recent analysis result, including generated_at, source file name, event list, alerts, parser warnings, risk score, and summary counters. The dashboard and report read this file when rendering the latest results.
+
+logs/uploads/
+Purpose: Uploaded log storage directory.
+What it does: Saves files uploaded by the user so they can be parsed and analyzed. Each upload gets a timestamped filename.
+
+============================================================
+TEMPLATES
+============================================================
+
+templates/index.html
+Purpose: Main landing/dashboard page.
+What it does: Displays the upload interface, current risk summary, priority alerts, and detection mix. It is the primary page visible when the user first opens the app.
+
+templates/dashboard.html
+Purpose: Alternate dashboard route.
+What it does: Provides a dashboard-oriented page wrapper using the same underlying data model as the main template. It mostly acts as a route extension for the overview experience.
+
+templates/report.html
+Purpose: Full incident report page.
+What it does: Renders every alert in a table with severity filtering, ATT&CK details, triage status controls, benchmark metrics, and CSV export. It is the analyst-focused forensic view.
+
+============================================================
+STATIC ASSETS
+============================================================
+
+static/style.css
+Purpose: Main front-end styling.
+What it does: Controls the overall layout, panels, cards, typography, nav, and visual styling used across the app.
+
+static/upload.css
+Purpose: Upload page styling.
+What it does: Styles the upload panel, file selector, buttons, and hero layout used in the main page.
+
+static/report.css
+Purpose: Report styling.
+What it does: Styles the incident report panels, tables, filters, and alert list display.
+
+static/chart.js
+Purpose: Front-end chart helper.
+What it does: Provides visual and interactive behavior for dashboard/reporting widgets, especially any chart or kill-chain presentation.
+
+============================================================
+TESTS AND BENCHMARK DATA
+============================================================
+
+tests/test_parser.py
+Purpose: Parser validation tests.
+What it does: Verifies that supported log formats are recognized and that malformed input is rejected cleanly.
+
+tests/test_detector.py
+Purpose: Detection rule validation tests.
+What it does: Confirms that brute force, unusual logins, web attacks, exfiltration, and other detections trigger when expected and do not trigger when they should not.
+
+tests/test_app.py
+Purpose: App-level tests.
+What it does: Tests upload validation, security/auth behavior, sample log loading, CSV export, benchmark access, and alert triage actions through Flask test client requests.
+
+tests/evaluation_logs.txt
+Purpose: Benchmark log input.
+What it does: Contains a labeled incident-style log used to measure how well the detector performs on known examples.
+
+tests/ground_truth.csv
+Purpose: Ground-truth labels for evaluation.
+What it does: Lists expected detection events and categories used to score the detector against known good results.
+
+tests/fixtures/sample_incident.log
+Purpose: Demo attack scenario.
+What it does: Contains a realistic multi-stage intrusion sample that exercises multiple detection rules in one log file.
+
+============================================================
+DOCUMENTATION FOLDER
+============================================================
+
+docs/00_project_overview.txt
+Purpose: High-level overview.
+What it does: Summarizes the purpose of the project, workflow, scope, and architecture.
+
+docs/01_app_py.txt
+Purpose: Breakdown of app.py.
+What it does: Explains what the Flask app does and how routes connect to analysis logic.
+
+docs/02_config_py.txt
+Purpose: Breakdown of config.py.
+What it does: Explains settings, thresholds, and suspicious IP configuration.
+
+docs/03_parser_py.txt
+Purpose: Breakdown of parser.py.
+What it does: Explains supported log types and how the parser normalizes them.
+
+docs/04_detector_py.txt
+Purpose: Breakdown of detector.py.
+What it does: Explains detection rules and ATT&CK mapping.
+
+docs/05_alerts_metrics_utils.txt
+Purpose: Breakdown of alerting and metrics helpers.
+What it does: Explains how alerts are built and how quality metrics are calculated.
+
+docs/06_templates_static.txt
+Purpose: Breakdown of UI files.
+What it does: Explains the dashboard/report user experience and styling assets.
+
+docs/07_tests_ci.txt
+Purpose: Breakdown of testing and CI.
+What it does: Explains the validation strategy and automation used by the project.
+
+docs/08_professor_runbook.txt
+Purpose: Instructor-facing guidance.
+What it does: Lists how to explain, demo, and evaluate the project for a professor or review.
+
+docs/09_file_map.txt
+Purpose: File inventory.
+What it does: Lists the project structure and the role of each main file.
+
+============================================================
+OVERALL PROJECT SUMMARY
+============================================================
+
+The project is a small educational SOC log analysis application. It does not try to be a full production SIEM. Instead, it focuses on the analyst workflow:
+
+- upload logs
+- normalize mixed data
+- detect suspicious behavior
+- map detections to ATT&CK
+- calculate risk and summarize findings
+- provide a dashboard and incident report
+- evaluate against benchmark labels
+
+The most important runtime path is:
+
+Upload file -> app.py -> parser.py -> detector.py -> alerts.py -> data/results.json -> templates/report.html and dashboard
+
+If you want to understand the project quickly, read these in this order:
+1. README.md
+2. app.py
+3. config.py
+4. analyzer/parser.py
+5. analyzer/detector.py
+6. templates/report.html
+7. tests/test_detector.py
+
+This gives the best blend of system overview, detection logic, interface, and validation.

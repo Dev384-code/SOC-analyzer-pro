@@ -1,0 +1,34 @@
+PROFESSOR DEMONSTRATION RUNBOOK
+
+Start
+-----
+1. Open PowerShell in the project directory.
+2. Run: python -m pip install -r requirements.txt
+3. Run: python app.py
+4. Open: http://127.0.0.1:5000
+
+Demonstrate upload
+------------------
+1. Select a real .log or .txt security file.
+2. Click Upload & analyze.
+3. Show event count, risk score, open alerts, and failed logins on the dashboard.
+4. Explain that malformed lines are counted as parser warnings rather than silently discarded.
+5. Open Incident report.
+6. Show severity, source line, user, IP, ATT&CK technique, and timestamp.
+7. Show per-type precision, recall, and false-positive rate from the labeled benchmark.
+
+Explain the architecture
+------------------------
+The parser is an adapter layer. It supports several common text formats and produces one event model. The detector consumes that model, so detection logic does not depend on one vendor's syntax. Flask handles upload and presentation, not security decisions.
+
+Explain the behavioral baseline
+-------------------------------
+The system does not declare every night login suspicious. It learns each user's observed login-hour median and MAD after at least three events. A substantial deviation is flagged. This is a transparent behavioral baseline that can be measured and tuned.
+
+Explain limitations honestly
+----------------------------
+IP reputation is local, not live. The benchmark is small and hand-labeled. Vendor-specific formats need adapters. Local auth is optional unless environment credentials are configured. CSRF, rate limiting, retention, database storage, and production deployment controls remain future work.
+
+Strong closing statement
+------------------------
+I built this to understand what a SOC analyst does when reviewing a SIEM alert queue: normalize evidence, detect behavior, map it to ATT&CK, prioritize it, and measure whether the rules are useful. The project connects SOC operations with my penetration-testing preparation.

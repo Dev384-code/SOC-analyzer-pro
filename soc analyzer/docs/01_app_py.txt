@@ -1,0 +1,44 @@
+app.py - APPLICATION ENTRY POINT
+
+Role
+----
+app.py creates the Flask application, defines HTTP routes, connects parsing to detection, and persists analysis results.
+
+Important objects and functions
+-------------------------------
+app
+    Flask application object. It sets a generated local secret key unless SECRET_KEY is supplied through the environment. Upload size is limited by config.MAX_UPLOAD_BYTES.
+
+empty_result()
+    Returns the empty dashboard state used before a file has been uploaded.
+
+analyze_log(path)
+    Reads one file with parse_log_file(), sends normalized events to detect(), converts findings to alerts, sorts alerts by critical/high/medium/low, calculates summary counters and risk score, then writes data/results.json.
+
+get_results()
+    Loads the persisted JSON result. If no result file exists, returns empty_result().
+
+benchmark_metrics()
+    Loads tests/evaluation_logs.txt and tests/ground_truth.csv and calculates aggregate and per-type evaluation metrics.
+
+template_context()
+    Prepares dashboard data. It exposes the result, the dynamically defined ATTACK_MAP, alert counts by type, and priority-sorted alerts.
+
+Routes
+------
+GET /             Main dashboard.
+GET /dashboard    Dashboard alias.
+GET /report       Full incident report with benchmark quality validation.
+POST /upload      Receives a .txt or .log file, validates it, analyzes it, and redirects to the dashboard.
+POST /load-sample Loads built-in multi-stage intrusion log (tests/fixtures/sample_incident.log).
+GET /export/csv   Exports forensic alert register as CSV.
+GET /api/results  Returns the latest result as JSON.
+POST /api/alert/<id>/status Updates alert triage lifecycle (open, in_progress, resolved, false_positive).
+
+Authentication
+--------------
+If SENTRYLINE_AUTH_USER and SENTRYLINE_AUTH_PASSWORD are configured, every non-static request requires HTTP Basic Authentication. For local demos with no credentials, authentication is disabled.
+
+Upload safety
+-------------
+The route uses secure_filename(), allows only configured extensions, limits the request size, stores uploads with generated names, rejects files with no parseable events, and rejects non-UTF-8 text.

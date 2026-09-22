@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentryline | Security Operations</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('dashboard') }}">
+      <span class="brand-mark">S</span>
+      <span>SENTRYLINE<small>security operations</small></span>
+    </a>
+    <nav>
+      <a class="active" href="{{ url_for('dashboard') }}">Overview</a>
+      <a href="{{ url_for('report') }}">Incident report</a>
+    </nav>
+  </header>
+  <main class="shell">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-stack">
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Security log intelligence / {{ result.source }}</p>
+        <h1>Turn log noise<br><em>into action.</em></h1>
+        <p class="lede">Sentryline helps security teams upload raw security logs, surface high-risk behavior, and move from raw events to a clear incident picture.</p>
+      </div>
+      <div class="hero-stamp">
+        <span class="pulse"></span>
+        <strong>READY TO SCAN</strong>
+        <small>{{ 'Last scan ' + result.generated_at[:16].replace('T', ' ') + ' UTC' if result.generated_at else 'Waiting for your first log' }}</small>
+      </div>
+    </section>
+
+    <section class="upload-strip">
+      <div>
+        <p class="eyebrow">Input source</p>
+        <h2>Analyze a log file</h2>
+        <small>Upload a .txt or .log file using any supported format, or run the built-in multi-stage scenario.</small>
+      </div>
+      <div class="upload-actions">
+        <form class="upload-form" method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+          <label class="file-picker">
+            <input type="file" name="log_file" accept=".txt,.log,text/plain" required>
+            <span>Choose log file</span>
+          </label>
+          <button class="button button-dark" type="submit">Upload & analyze <span>-></span></button>
+        </form>
+        <form method="post" action="{{ url_for('load_sample') }}" style="display:inline;">
+          <button class="button button-sample" type="submit" title="Load sample multi-stage attack scenario with 28 events and 8 ATT&CK techniques">Load Sample Attack Scenario <span>⚡</span></button>
+        </form>
+      </div>
+    </section>
+
+    <section class="capability-strip">
+      <div>
+        <p class="eyebrow">What Sentryline provides</p>
+        <h2>Multi-signal detection. One clear read.</h2>
+      </div>
+      <div class="capability">
+        <b>01</b>
+        <strong>Behavioral baselines</strong>
+        <small>Learn normal login patterns with median & MAD.</small>
+      </div>
+      <div class="capability">
+        <b>02</b>
+        <strong>Attack mapping</strong>
+        <small>Connect detections to MITRE ATT&CK techniques.</small>
+      </div>
+      <div class="capability">
+        <b>03</b>
+        <strong>Risk scoring</strong>
+        <small>Prioritize the signals that need attention first.</small>
+      </div>
+      <div class="capability">
+        <b>04</b>
+        <strong>Quality metrics</strong>
+        <small>Evaluate precision, recall, and false positives.</small>
+      </div>
+    </section>
+
+    <section class="stat-grid">
+      <article class="stat-card accent">
+        <span>Composite risk</span>
+        <strong>{{ result.risk_score }}<small>/100</small></strong>
+        <div class="risk-bar"><i style="width: {{ result.risk_score }} %"></i></div>
+        <b>{{ 'Elevated attention' if result.risk_score >= 50 else 'Within baseline' }}</b>
+      </article>
+      <article class="stat-card">
+        <span>Open alerts</span>
+        <strong>{{ result.summary.open_alerts }}</strong>
+        <b class="muted">{{ result.summary.severity_counts.critical }} critical signals</b>
+      </article>
+      <article class="stat-card">
+        <span>Failed logins</span>
+        <strong>{{ result.summary.failed_logins }}</strong>
+        <b class="muted">{{ result.summary.unique_ips }} source IPs observed</b>
+      </article>
+      <article class="stat-card">
+        <span>Accounts seen</span>
+        <strong>{{ result.summary.unique_users }}</strong>
+        <b class="muted">{{ result.summary.total_events }} events parsed</b>
+      </article>
+    </section>
+
+    <section class="killchain-panel">
+      <div class="panel-head">
+        <div>
+          <p class="eyebrow">MITRE ATT&CK kill-chain progression</p>
+          <h2>Attack lifecycle visualization</h2>
+        </div>
+      </div>
+      <div id="attack-killchain">
+        <p class="muted" style="font-size:12px;">Loading kill-chain progression...</p>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Priority queue</p>
+            <h2>Signals requiring review</h2>
+          </div>
+          <a class="text-link" href="{{ url_for('report') }}">Full report <span>-></span></a>
+        </div>
+        {% for alert in priority_alerts[:6] %}
+          <div class="alert-row">
+            <span class="severity-dot {{ alert.severity }}"></span>
+            <div class="alert-copy">
+              <strong>{{ alert.message }}</strong>
+              <small>{{ alert.user }} · {{ alert.ip }} · {{ alert.timestamp[11:16] }} UTC</small>
+            </div>
+            <span class="tag {{ alert.severity }}">{{ alert.severity }}</span>
+          </div>
+        {% else %}
+          <div class="empty">Upload a log file or load the sample scenario to populate the queue.</div>
+        {% endfor %}
+      </div>
+      <aside class="panel snapshot">
+        <p class="eyebrow">Detection mix</p>
+        <h2>What we found</h2>
+        {% for alert_type, metadata in detection_types.items() %}
+          <div class="mix-row">
+            <span>{{ alert_type|replace('_', ' ')|title }}</span>
+            <b>{{ alert_counts[alert_type] }}</b>
+          </div>
+        {% endfor %}
+        <div class="scope-note">
+          <span class="pulse"></span>
+          <div>
+            <strong>Rules active</strong>
+            <small>Behavioral baseline · ATT&CK mapping · multi-signal analysis</small>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='chart.js') }}"></script>
+</body>
+</html>

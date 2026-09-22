@@ -1,0 +1,37 @@
+analyzer/parser.py - LOG PARSING AND NORMALIZATION
+
+Role
+----
+Converts different text log formats into one normalized event structure so the detector does not need separate logic for every source.
+
+Normalized event fields
+-----------------------
+timestamp, user, ip, country, action, status, line
+
+Additional fields
+-----------------
+raw stores the original line for content inspection.
+request stores an Apache/Nginx request string when available.
+
+Supported formats
+-----------------
+1. Normalized key-value events:
+   2026-09-02T10:00:00Z user=alex ip=192.0.2.1 country=US action=login status=failed
+2. Linux SSH/auth lines:
+   Accepted or Failed password records with ISO or syslog-style timestamps.
+3. Apache/Nginx access lines with request and HTTP status.
+4. JSON Lines using timestamp/@timestamp, username, source_ip, and outcome-style fields.
+5. Six-column CSV: timestamp,user,ip,country,action,status.
+6. Generic ISO-prefixed security records containing source IPs, UFW BLOCK, sudo, PowerShell, transfer, or beacon keywords.
+
+Status normalization
+--------------------
+Success-like values become success. Failure-like values include failed, failure, denied, block, blocked, error, 401, and 403 and become failed. Other security records become alert so they can be routed to special detection rules.
+
+Graceful failure
+----------------
+A line that cannot be parsed returns None. parse_log_file() records its line number in parse_errors while continuing with other lines. The upload route rejects a file only when it contains zero valid events.
+
+Important limitation
+--------------------
+A parser pattern is evidence extraction, not proof that an event is malicious. The detector makes the security decision after normalization.

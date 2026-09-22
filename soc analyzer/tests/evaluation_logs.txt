@@ -1,0 +1,52 @@
+2026-09-01 09:00:00 sshd[1]: Accepted password for alice from 192.0.2.10 port 10001 ssh2
+2026-09-01 09:05:00 sshd[2]: Accepted password for alice from 192.0.2.10 port 10002 ssh2
+2026-09-01 09:10:00 sshd[3]: Accepted password for alice from 192.0.2.10 port 10003 ssh2
+2026-09-01 09:15:00 sshd[4]: Accepted password for alice from 192.0.2.10 port 10004 ssh2
+2026-09-01 09:20:00 sshd[5]: Accepted password for alice from 192.0.2.10 port 10005 ssh2
+2026-09-01 09:25:00 sshd[6]: Accepted password for alice from 192.0.2.10 port 10006 ssh2
+2026-09-01 09:30:00 sshd[7]: Accepted password for alice from 192.0.2.10 port 10007 ssh2
+2026-09-01 09:35:00 sshd[8]: Accepted password for alice from 192.0.2.10 port 10008 ssh2
+2026-09-01 09:40:00 sshd[9]: Accepted password for alice from 192.0.2.10 port 10009 ssh2
+2026-09-01 09:45:00 sshd[10]: Accepted password for alice from 192.0.2.10 port 10010 ssh2
+2026-09-01 09:50:00 sshd[11]: Accepted password for alice from 192.0.2.10 port 10011 ssh2
+2026-09-01 09:55:00 sshd[12]: Accepted password for alice from 192.0.2.10 port 10012 ssh2
+2026-09-01 10:00:00 sshd[13]: Accepted password for alice from 192.0.2.10 port 10013 ssh2
+2026-09-01 10:05:00 sshd[14]: Accepted password for alice from 192.0.2.10 port 10014 ssh2
+2026-09-01 10:10:00 sshd[15]: Accepted password for alice from 192.0.2.10 port 10015 ssh2
+2026-09-01 10:15:00 sshd[16]: Accepted password for alice from 192.0.2.10 port 10016 ssh2
+2026-09-01 10:20:00 sshd[17]: Accepted password for alice from 192.0.2.10 port 10017 ssh2
+2026-09-01 10:25:00 sshd[18]: Accepted password for alice from 192.0.2.10 port 10018 ssh2
+2026-09-01 10:30:00 sshd[19]: Accepted password for alice from 192.0.2.10 port 10019 ssh2
+2026-09-01 10:35:00 sshd[20]: Accepted password for alice from 192.0.2.10 port 10020 ssh2
+2026-09-01 10:40:00 sshd[21]: Accepted password for alice from 192.0.2.10 port 10021 ssh2
+2026-09-01 10:45:00 sshd[22]: Accepted password for alice from 192.0.2.10 port 10022 ssh2
+2026-09-01 10:50:00 sshd[23]: Accepted password for alice from 192.0.2.10 port 10023 ssh2
+2026-09-01 10:55:00 sshd[24]: Accepted password for alice from 192.0.2.10 port 10024 ssh2
+2026-09-01 11:00:00 sshd[25]: Accepted password for alice from 192.0.2.10 port 10025 ssh2
+2026-09-01 11:05:00 sshd[26]: Accepted password for alice from 192.0.2.10 port 10026 ssh2
+2026-09-01 11:10:00 sshd[27]: Accepted password for alice from 192.0.2.10 port 10027 ssh2
+2026-09-01 11:15:00 sshd[28]: Accepted password for alice from 192.0.2.10 port 10028 ssh2
+2026-09-01 11:20:00 sshd[29]: Accepted password for alice from 192.0.2.10 port 10029 ssh2
+2026-09-01 11:25:00 sshd[30]: Accepted password for alice from 192.0.2.10 port 10030 ssh2
+2026-09-01 12:00:00 sshd[31]: Accepted password for bob from 192.0.2.11 port 11001 ssh2
+2026-09-01 12:05:00 sshd[32]: Accepted password for bob from 192.0.2.11 port 11002 ssh2
+2026-09-01 12:10:00 sshd[33]: Accepted password for bob from 192.0.2.11 port 11003 ssh2
+2026-09-01 10:00:00 sshd[34]: Failed password for carol from 192.0.2.12 port 12001 ssh2
+2026-09-01 10:20:00 sshd[35]: Failed password for carol from 192.0.2.12 port 12002 ssh2
+2026-09-01 10:00:00 sshd[36]: Failed password for root from 185.220.101.45 port 13001 ssh2
+2026-09-01 10:00:02 sshd[37]: Failed password for root from 185.220.101.45 port 13002 ssh2
+2026-09-01 10:00:04 sshd[38]: Failed password for root from 185.220.101.45 port 13003 ssh2
+2026-09-01 10:00:06 sshd[39]: Accepted password for root from 185.220.101.45 port 13004 ssh2
+192.0.2.50 - - [01/Sep/2026:11:00:00 +0000] "GET /login.php?user=admin' OR '1'='1 HTTP/1.1" 200 512
+192.0.2.51 - - [01/Sep/2026:11:01:00 +0000] "GET /search.php?q=<script>alert(1)</script> HTTP/1.1" 200 512
+192.0.2.52 - - [01/Sep/2026:11:02:00 +0000] "GET /../../etc/passwd HTTP/1.1" 404 512
+2026-09-01 12:00:00 sudo: root : USER=root ; COMMAND=/usr/sbin/usermod -aG sudo svc_update
+2026-09-01 12:01:00 c2_agent: beacon heartbeat from 192.0.2.60 to 203.0.113.10
+2026-09-01 12:02:00 dlp_agent: large outbound transfer detected from host WKS-15 to external IP 203.0.113.11, 460MB over HTTPS
+2026-09-01 12:03:00 kernel: [UFW BLOCK] IN=eth0 SRC=45.155.204.12 DST=10.0.0.5 PROTO=TCP SYN
+this is deliberately malformed and should be reported
+2026-09-01 13:00:00 sshd[50]: Accepted password for dave from 192.0.2.70 port 15000 ssh2
+2026-09-01 13:05:00 sshd[51]: Accepted password for dave from 192.0.2.70 port 15001 ssh2
+2026-09-01 13:10:00 sshd[52]: Accepted password for dave from 192.0.2.70 port 15002 ssh2
+2026-09-01T14:00:00Z user=erin ip=192.0.2.80 country=US action=login status=success
+2026-09-01T14:05:00Z user=erin ip=192.0.2.81 country=GB action=login status=success

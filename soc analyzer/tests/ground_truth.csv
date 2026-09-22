@@ -1,0 +1,16 @@
+line,type
+36,suspicious_ip
+37,suspicious_ip
+38,suspicious_ip
+39,suspicious_ip
+40,web_attack
+41,web_attack
+42,web_attack
+43,privilege_escalation
+44,c2_beaconing
+45,data_exfiltration
+46,suspicious_ip
+46,network_scan
+38,brute_force
+39,account_takeover
+52,country_change

@@ -1,0 +1,33 @@
+TEMPLATES AND STATIC FILES
+
+index.html
+----------
+The main analyst dashboard. It contains the upload form, current source, risk score, alert summary, capability description, severity queue, and dynamic detection-mix panel. The detection mix loops over detection_types from ATTACK_MAP, so adding a new rule automatically adds a row.
+
+dashboard.html
+--------------
+A small template extension of index.html. It provides the /dashboard view without duplicating the dashboard markup.
+
+report.html
+-----------
+The incident report. It shows the current uploaded source, generation time, risk score, parser warnings, aggregate benchmark quality, per-type quality, and every alert with severity, ATT&CK technique, user, IP, and timestamp.
+
+style.css
+---------
+Defines the main visual system: typography, colors, layout, panels, statistics, alert rows, severity tags, responsive behavior, and report tables.
+
+upload.css
+----------
+Adds upload-specific styling, flash messages, capability cards, and responsive upload layout.
+
+report.css
+----------
+Styles the dark detection-quality panel and its metric cards.
+
+chart.js
+--------
+A minimal frontend readiness marker reserved for future timeline charts. It does not perform detection.
+
+Security note
+-------------
+Templates display persisted analysis data. They do not decide whether an event is malicious; that responsibility belongs to parser.py and detector.py.

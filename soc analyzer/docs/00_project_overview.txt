@@ -1,0 +1,28 @@
+SENTRYLINE SECURITY LOG ANALYZER - PROJECT GUIDE
+
+Purpose
+-------
+Sentryline is an educational SOC detection workspace. A user uploads a .txt or .log file. The application parses supported log lines into a common event format, runs detection rules, generates prioritized alerts, calculates a risk score, and displays the result in a dashboard and incident report.
+
+Main workflow
+-------------
+1. User opens the Flask website.
+2. User uploads a text log file.
+3. Flask validates the filename and size.
+4. The parser normalizes recognized lines.
+5. Unsupported lines become parser warnings.
+6. The detector creates findings.
+7. Alerts receive severity, confidence, source line, and MITRE ATT&CK metadata.
+8. Results are stored in data/results.json.
+9. The dashboard shows summary statistics and the highest-priority alerts.
+10. The report shows the full alert register and benchmark metrics.
+
+Important scope
+---------------
+This is a portfolio and teaching project, not a production SIEM. It supports common SSH, Apache/Nginx, JSON Lines, CSV, normalized, firewall, endpoint, and data-loss patterns. Vendor-specific formats may require a new parser adapter.
+
+Architecture
+------------
+Upload -> Flask route -> parser.py -> normalized events -> detector.py -> findings -> alerts.py -> results.json -> dashboard/report templates.
+
+The benchmark in tests/ is separate from user uploads. Its metrics are labeled evaluation results, not proof that every future upload is classified perfectly.

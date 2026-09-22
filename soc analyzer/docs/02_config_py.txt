@@ -1,0 +1,30 @@
+config.py - CONFIGURATION
+
+Role
+----
+Centralizes filesystem paths and detection settings so logic is not scattered through the application.
+
+Values
+------
+BASE_DIR
+    Absolute project directory.
+RESULTS_FILE
+    data/results.json, the latest persisted analysis.
+UPLOAD_DIR
+    logs/uploads/, where accepted uploads are stored.
+MAX_UPLOAD_BYTES
+    Five megabytes. Flask rejects larger requests.
+ALLOWED_LOG_EXTENSIONS
+    .txt and .log only.
+BRUTE_FORCE_THRESHOLD
+    Three failed events.
+BRUTE_FORCE_WINDOW_MINUTES
+    Ten-minute brute-force window.
+UNUSUAL_HOURS
+    Legacy set retained for compatibility. The current detector does not use it; unusual-time detection uses a per-user median/MAD baseline instead.
+SUSPICIOUS_IPS
+    Local static reputation set used by the suspicious-IP rule. It is not a live threat-intelligence service.
+
+How to explain it
+------------------
+Configuration values are intentionally easy to inspect and tune. The benchmark should be rerun after changing thresholds. In a production deployment these values would normally come from environment configuration or a database.
